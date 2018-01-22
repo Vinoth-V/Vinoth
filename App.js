@@ -27,8 +27,8 @@ import Logout from './Logout';
 import SFChat from './SFChat';
 import DynamicsChat from './DynamicsChat';
 import SFUpdateForm from './SFUpdateForm';
-import SFLogin from './SFLogin';
-import DynamicsLogin from './DynamicsLogin';
+import Account from './Account';
+import AboutUs from './AboutUs';
 
 const styles = StyleSheet.create({
   tab: {
@@ -63,12 +63,12 @@ const TabNavigation = TabNavigator({
 
       })
   },
-  Profile: {
-        path: "./Profile",
+  Account: {
+        path: "./",
 
-    screen: Profile,
+    screen: Account,
     navigationOptions: ({ navigation }) => ({
-        title: "Profile",
+        title: "Account",
             tabBarIcon: ({ tintColor }) => {
       return <Icon name="user" size={25} color={tintColor} />;
     }
@@ -76,40 +76,26 @@ const TabNavigation = TabNavigator({
 
       })  
   },
-  ChangePassword: {
-        path: "./ChangePassword",
+  AboutUs: {
+        path: "./",
 
-    screen: ChangePassword,
+    screen: AboutUs,
     navigationOptions: ({ navigation }) => ({
-        title: "Password",
+        title: "About Us",
             tabBarIcon: ({ tintColor }) => {
       return <Icon name="lock" size={25} color={tintColor} />;
     }
 
       })  
   },
-
-
-  Logout: {
-        path: "./Logout",
-        screen: Logout,
-    navigationOptions: ({ navigation }) => ({
-        title: "Logout",
-            tabBarIcon: ({ tintColor }) => {
-      return <Icon name="sign-out" size={25} color={tintColor} />;
-    }
-
-
-      })  
-  },
-
+  
   
 }, {initialRouteName: "BotList",
     tabBarPosition: "bottom",
     swipeEnabled: true,
     animationEnabled: true,
     lazy: true,
-    order: ["BotList", "Profile","ChangePassword","Logout"],
+    order: ["BotList", "Account","AboutUs"],
     backBehavior: "initialRoute",
     tabBarOptions: {
       activeTintColor: '#FFFFFF',
@@ -174,21 +160,32 @@ const StackNavigation = StackNavigator({
       title: 'Salesforce Update'
     }
   },
-  SFLogin: {
-    path: './SFLogin',
-    screen: SFLogin,
+  Account:{
+    path: './',
+    screen: Account,
     navigationOptions: {
-      title: 'Salesforce Login'
+      title: 'Account'
     }
   },
-   DynamicsLogin: {
-    path: './DynamicsLogin',
-    screen: DynamicsLogin,
+  AboutUs:{
+    path: './',
+    screen: AboutUs,
     navigationOptions: {
-      title: 'Dynamics Login'
+      title: 'About Us'
     }
   },
-  
+  Profile: {
+      screen: Profile,
+      navigationOptions: {
+        title: 'My Profile', 
+      },
+    },
+    ChangePassword: {
+      screen: ChangePassword,
+      navigationOptions: {
+        title: 'Reset Password', 
+      },
+    },  
 });
 
 export default StackNavigation;
