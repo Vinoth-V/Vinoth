@@ -97,4 +97,22 @@ export default {
 		alignItems: 'center',
 		flexDirection:'row',
 	},
+	account_container: {
+		margin: 8,
+		marginTop: 24,
+		justifyContent: 'center',
+		alignItems: 'center',
+		position: 'relative',
+	},
+	account_content: {
+		justifyContent: 'flex-start',
+		alignItems: 'stretch',
+	},
+	account_link:{
+		margin:10, 
+	},
+	account_link_text:{ 
+		fontSize:32
+	}
+
 }	
